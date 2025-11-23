@@ -1,0 +1,19 @@
+{
+  "buildCommand": "npm run build",
+  "framework": "nextjs",
+  "installCommand": "npm install",
+  "env": {
+    "POSTGRES_URL": {
+      "description": "PostgreSQL connection string from Vercel Postgres",
+      "required": true
+    },
+    "NEXTAUTH_SECRET": {
+      "description": "Secret for NextAuth.js session encryption. Generate with: openssl rand -base64 32",
+      "required": true
+    },
+    "NEXTAUTH_URL": {
+      "description": "Full URL of your deployment (e.g., https://deja-you.vercel.app)",
+      "required": true
+    }
+  }
+}
