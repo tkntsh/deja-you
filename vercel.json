@@ -3,8 +3,8 @@
   "framework": "nextjs",
   "installCommand": "npm install",
   "env": {
-    "POSTGRES_URL": {
-      "description": "PostgreSQL connection string from Vercel Postgres",
+    "DATABASE_URL": {
+      "description": "PostgreSQL connection string from Neon (Vercel Marketplace integration)",
       "required": true
     },
     "NEXTAUTH_SECRET": {
