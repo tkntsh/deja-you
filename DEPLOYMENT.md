@@ -83,7 +83,9 @@ This application uses:
 
 ## Step 4: Configure Environment Variables (Part 1)
 
-Before deploying, add these environment variables:
+> **IMPORTANT**: Environment variables must be added in the Vercel dashboard, NOT in code files. Never commit secrets to your repository.
+
+Before deploying, you need to prepare these environment variables. We'll add them in the Vercel dashboard in the next step.
 
 ### 4.1 Generate NEXTAUTH_SECRET
 
@@ -94,23 +96,25 @@ Before deploying, add these environment variables:
 
 **Or use an online generator**: [generate-secret.vercel.app/32](https://generate-secret.vercel.app/32)
 
-Copy the generated value.
+Copy the generated value and save it somewhere temporarily (you'll need it in the next step).
 
 ### 4.2 Add Environment Variables in Vercel
 
-In the **Environment Variables** section, add:
+In the Vercel project creation screen, scroll down to **"Environment Variables"** section and add:
 
 1. **NEXTAUTH_SECRET**
-   - **Key**: `NEXTAUTH_SECRET`
-   - **Value**: [paste the generated secret]
-   - **Environments**: ✓ Production, ✓ Preview, ✓ Development
+   - **Name**: `NEXTAUTH_SECRET`
+   - **Value**: [paste your generated secret from step 4.1]
+   - **Environments**: Check all three: ✓ Production, ✓ Preview, ✓ Development
+   - Click **"Add"**
 
-2. **NEXTAUTH_URL** (temporary - we'll update this later)
-   - **Key**: `NEXTAUTH_URL`
-   - **Value**: `https://deja-you.vercel.app` (use your project name)
-   - **Environments**: ✓ Production, ✓ Preview, ✓ Development
+2. **NEXTAUTH_URL** (temporary value - we'll update this after deployment)
+   - **Name**: `NEXTAUTH_URL`
+   - **Value**: `https://temp-url.vercel.app` (we'll update this later with the real URL)
+   - **Environments**: Check all three: ✓ Production, ✓ Preview, ✓ Development
+   - Click **"Add"**
 
-> **Note**: We'll add `DATABASE_URL` after setting up Neon in the next step.
+> **Note**: Don't worry about `DATABASE_URL` yet - Neon will add it automatically in Step 6.
 
 ---
 
